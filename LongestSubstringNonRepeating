@@ -1,0 +1,31 @@
+#Sliding window
+
+strList=["C","A","D","B","Z","A","B","C","D","E"] 
+
+
+def longest_substring_non_repeating():
+    dict = {}
+    longest=-999
+    i=0
+    for j in range(len(strList)):
+        
+        print(f"strList[j] = {strList[j]}")
+
+        if (strList[j] in dict and dict[strList[j]]< i) or (strList[j] not in dict):
+            dict[strList[j]]=j
+            longest = max(longest, j-i+1)
+            print(f"Longest = {longest}")
+            j+=1
+
+        elif strList[j] in dict:
+            i = dict[strList[j]]+1
+    
+    return longest
+
+longest = longest_substring_non_repeating()
+print(longest)
+
+
+
+
+       

@@ -1,0 +1,29 @@
+nums = [1, 2, 3, 3, 3, 3, 3, 3, 4 ,5, 6, 6, 6, 7, 9]
+
+#while loop try 
+def lower_upper_bound(nums, target, l, h)-> int:
+    lb =h+1
+    i=0
+    while(l<=h):
+        
+        m=(l+h)//2
+    
+        if(nums[m]>= target):
+            lb=m
+            print(f"lb = {lb}, l = {l}, h = {h}, m = {m}")
+            h=m-1
+        else:
+            l=m+1
+
+    return lb
+
+
+print(len(nums))
+
+value = lower_upper_bound(nums, 7, 0,  len(nums)-1)
+print(f"Result = {value}")
+matrix= [[0 for _ in range(value)] for _ in range(value)]
+print(matrix)
+print("HELLO JI")
+matrix1= [[0* value] * value]
+print(matrix1)

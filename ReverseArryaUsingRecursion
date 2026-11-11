@@ -1,0 +1,19 @@
+def reverse(arr, L, R):
+    if(L<=R):
+        arr[L],arr[R]=arr[R],arr[L]
+    else: 
+        return
+    L +=1
+    R -=1
+    reverse(arr, L, R )
+
+
+
+
+arr=[1,2,3,4,5]
+# print(arr[::-1])
+# print(arr)
+
+# arr[0],arr[4],arr[1],arr[3]= arr[4],arr[0],arr[3],arr[1]
+reverse(arr, 0, len(arr)-1)
+print(arr)
